@@ -56,8 +56,7 @@ function collisionDetection() {
                     b.status = 0;
                     if(winDetection() == true) {
                         alert("YOU WON!");
-                        document.location.reload();
-                        clearInterval(interval); // Needed for Chrome to end game    
+                        restartGame();
                     }        
                 }
             }
@@ -128,8 +127,7 @@ function draw() {
                 }
             }  else {
                     alert("GAME OVER");
-                    document.location.reload();
-                    clearInterval(interval); // Needed for Chrome to end game
+                    restartGame();
             }
     }
 
@@ -142,6 +140,12 @@ function draw() {
 
     x += dx;
     y += dy;
+}
+
+function restartGame() {
+    alert("\n\n\nPLAY AHAIN...");
+    document.location.reload();
+    clearInterval(interval); // Needed for Chrome to end game
 }
 
 var interval = setInterval(draw, 15);
